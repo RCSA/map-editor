@@ -1,0 +1,64 @@
+body{
+  background:#f3f3f3;
+  margin:0;
+  padding:0;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  height:100%;
+}
+
+.popin{
+  background:#fff;
+  padding:15px;
+  box-shadow: 0 0 20px #999;
+  border-radius:2px;
+  position: absolute;
+  top:15px;
+  bottom: 15px;
+  left:460px;
+  right:15px;
+}
+.popin-left{
+  background:#fff;
+  padding:15px;
+  box-shadow: 0 0 20px #999;
+  border-radius:2px;
+  position: absolute;
+  top:15px;
+  bottom: 15px;
+  left:15px;
+  width:400px;
+}
+#map{
+  position: absolute;
+  top:15px;
+  bottom: 15px;
+  left:15px;
+  right:15px;
+  background:#6699cc;
+}
+#rooms-descriptions{
+  position: absolute;
+  top:15px;
+  bottom: 15px;
+  left:15px;
+  right:15px;
+  resize: none;
+  overflow: auto;
+}
+
+.alert{
+  position:relative;
+  float:top;
+  margin-left: 490px;
+  margin-right: 45px;
+  margin-top: 15px;
+  margin-bottom:15px;
+  height: 30px;
+  background:red;
+  padding:15px;
+  box-shadow: 0 0 20px #999;
+  border-radius:2px;
+}
+.alerts .alert:first-child{
+  margin-top: 45px;
+}

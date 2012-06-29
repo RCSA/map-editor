@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Map of Robinson College Rooms</title>
+  <link href='http://fonts.googleapis.com/css?family=Convergence|Bitter|Droid+Sans' rel='stylesheet' type='text/css' />
+  <link href='style.css' rel='stylesheet' type='text/css' />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="gmaps.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div class="popin-left">
+      <textarea id="rooms-descriptions">#Lines beginning with # are treated as 
+#comments
+#Blank lines are ignored
+#All other lines must be formatted like 
+#examples
+
+#Each room is defined as the part which follows
+#the # character in the url on the room wiki
+#and the id of the room.
+#followed by a series of longitude and 
+#points.
+
+#This text is never saved, but the map should
+#update instantly.
+
+#Clicking on the map adds a new co-ordinate 
+#to the input for you.
+
+# 1A Sylvester
+
+## Room 1
+["/1AS/1AS-1", "1AS-1"]
+[52.20565666629283,0.1023590796633016]
+[52.205647214812245,0.10243753427698721]
+[52.20566406310232,0.10243954593374838]
+[52.20566406310232,0.10243082875444998]
+[52.205681322319656,0.10243619317247976]
+[52.20569159566013,0.1023590796633016]
+
+## Room 2
+["/1AS/1AS-2", "1AS-2"]
+[52.20562790091091,0.10235371524527181]
+[52.205622558766514,0.1024140649481069]
+[52.205636119593365,0.10241942936613668]
+[52.205636119593365,0.10243284041121115]
+[52.205647214812245,0.10243753427698721]
+[52.20565666629283,0.1023590796633016]
+
+## Room 3
+["/1AS/1AS-3", "1AS-3"]
+[52.205602833919706, 0.1023476802749883]
+[52.20559297149318, 0.10241741770937551]
+[52.205608176066825,0.10242211157515158]
+[52.20561064167281,0.1024140649481069]
+[52.205622558766514,0.1024140649481069]
+[52.20562790091091,0.10235371524527181]
+
+## Room 4
+["/1AS/1AS-4/", "1AS-4"]
+[52.20557694504539, 0.10234030420019735]
+[52.20556872635212, 0.10239955570204984]
+[52.205581465326155, 0.10240400666430105]
+[52.20557899971857, 0.10241473550036062]
+[52.20559297149318, 0.10241741770937551]
+[52.205602833919706, 0.1023476802749883]
+
+## Room 5
+["/1AS/1AS-5/", "1AS-5"]
+[52.2055453030676, 0.10232914771540891]
+[52.20553544062833, 0.10240156735881101]
+[52.20555475456987, 0.10240626122458707]
+[52.205556809243994, 0.10239620294078122]
+[52.20556872635212, 0.10239955570204984]
+[52.20557694504539, 0.10234030420019735]</textarea>
+    </div>
+    <div class="popin">
+      <div id="map"></div>
+    </div>
+    <div class="alerts">
+    </div>
+  </div>
+</body>
+</html>
