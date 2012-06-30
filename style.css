@@ -62,3 +62,6 @@ body{
 .alerts .alert:first-child{
   margin-top: 45px;
 }
+#map div{
+  cursor:crosshair;
+}
