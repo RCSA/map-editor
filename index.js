@@ -3,7 +3,7 @@ draw();
 function center(){
     if(!window.map || !window.map.map || !window.map.map.center)
         return [52.20531805547327, 0.10361167127326709];
-    return [map.map.center.$a, map.map.center.ab];
+    return [map.map.center.lat(), map.map.center.lng()];
 }
 function draw(){
     var c = center();
@@ -56,9 +56,10 @@ function updateBounds(){
 }
 console.warn = function(){};
 function click(e){
-    console.log([e.latLng.$a, e.latLng.ab]);
+    console.log(e.latLng);
+    console.log([e.latLng.$a, e.latLng.Za]);
     $("#rooms-descriptions").val($("#rooms-descriptions").val() + 
-        "\n" + JSON.stringify([e.latLng.$a, e.latLng.ab]));
+        "\n" + JSON.stringify([e.latLng.lat(), e.latLng.lng()]));
     inputChanged();
 }
 
