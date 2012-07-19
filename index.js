@@ -55,7 +55,18 @@ function updateBounds(){
     }
 }
 console.warn = function(){};
+
+var infoWindow = new google.maps.InfoWindow({});
+
+var cntrl = false;
+document.onkeydown = function keyDown(e) {
+    if (e.ctrlKey) cntrl = true;
+};
+document.onkeyup = function keyDown(e) {
+    if (e.ctrlKey) cntrl = false;
+};
 function click(e){
+    infoWindow.close();
     console.log(e.latLng);
     console.log([e.latLng.$a, e.latLng.Za]);
     $("#rooms-descriptions").val($("#rooms-descriptions").val() + 
@@ -63,7 +74,7 @@ function click(e){
     inputChanged();
 }
 
-var infoWindow = new google.maps.InfoWindow({});
+
 function room(path, obj){
     var p = [], latlng, i;
     for(i in path){
@@ -81,7 +92,9 @@ function room(path, obj){
         var lon = p[1]/path.length;
         return new google.maps.LatLng(lat, lon);
     }());
-    function click(e){
+    function clickRoom(e){
+        if (cntrl) return click(e);
+
         infoWindow.setContent('<a href="http://www.rcsa.co.uk/rooms#'+obj.id+'">'
             +obj.name+'</a>');
 
@@ -96,7 +109,7 @@ function room(path, obj){
           strokeWeight: 3,
           fillColor: fill,
           fillOpacity: 0.6,
-          click:click
+          click:clickRoom
         });
     }
     var available = poly('#BBD8E9', '#BBD8E9');
