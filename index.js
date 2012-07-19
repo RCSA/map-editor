@@ -58,12 +58,12 @@ console.warn = function(){};
 
 var infoWindow = new google.maps.InfoWindow({});
 
-var cntrl = false;
+var cntrlPressed = false;
 document.onkeydown = function keyDown(e) {
-    if (e.ctrlKey) cntrl = true;
+    if (e.ctrlKey || e.keyCode === 17 || e.keyIdentifier === 'Control') cntrlPressed = true;
 };
 document.onkeyup = function keyDown(e) {
-    if (e.ctrlKey) cntrl = false;
+    if (e.ctrlKey || e.keyCode === 17 || e.keyIdentifier === 'Control') cntrlPressed = false;
 };
 function click(e){
     infoWindow.close();
@@ -93,7 +93,7 @@ function room(path, obj){
         return new google.maps.LatLng(lat, lon);
     }());
     function clickRoom(e){
-        if (cntrl) return click(e);
+        if (cntrlPressed) return click(e);
 
         infoWindow.setContent('<a href="http://www.rcsa.co.uk/rooms#'+obj.id+'">'
             +obj.name+'</a>');
